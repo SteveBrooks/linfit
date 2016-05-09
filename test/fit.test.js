@@ -36,5 +36,26 @@ describe('fit', function() {
             expect(result.rr).to.be.eql(1);      
         });
     });
+
+    describe('Given a linear data set', function() {
+       var data = [
+           {x:0, y:0.1},
+           {x:1, y:0.9},
+           {x:2, y:2.2},
+           {x:3, y:3.2},
+           {x:4, y:3.9},
+       ];
+
+       var result;
+
+       before(function() {
+           result = fit(data);
+           console.log(JSON.stringify(result, null, 4));
+       });
+
+       it('should have a correlation coefficent rr=1', function() {
+           expect(result.rr).to.be.above(0.5);
+       });
+    });
 });
 
