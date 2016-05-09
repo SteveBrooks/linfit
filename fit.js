@@ -40,44 +40,44 @@ var fit = function fit(data) {
 
     // Standard Errors in Slope and Intercept
     ss = (sums.YY - (sums.XY * sums.XY / sums.XX)) / (N - 2);
-                     s = Math.sqrt(Math.abs(ss));
+    s = Math.sqrt(Math.abs(ss));
 
-                     dA = s * Math.sqrt((1.0 / N) + (means.X * means.X / sigmaXX));
-                     dB = s / Math.sqrt(sums.XX);
+    dA = s * Math.sqrt((1.0 / N) + (means.X * means.X / sigmaXX));
+    dB = s / Math.sqrt(sums.XX);
 
-                     return {
-                         A: A,
-                         B: B,
-                         dA: dA,
-                         dB: dB,
-                         rr: rr
-                     };
+    return {
+       A: A,
+       B: B,
+       dA: dA,
+       dB: dB,
+       rr: rr
+    };
 
-                     function sumData() {
-                         var _sums = {
-                             X: 0,
-                             Y: 0,
-                             XX: 0,
-                             XY: 0,
-                             YY: 0
-                         };
+    function sumData() {
+        var _sums = {
+            X: 0,
+            Y: 0,
+            XX: 0,
+            XY: 0,
+            YY: 0
+        };
 
-                         data.forEach(function(datum) {
-                             _sums.X +=  datum.x;
-                             _sums.Y +=  datum.y;
-                             _sums.XX += datum.x * datum.x;
-                             _sums.XY += datum.x * datum.y;
-                             _sums.YY += datum.y * datum.y;
-                         });
+        data.forEach(function(datum) {
+            _sums.X +=  datum.x;
+            _sums.Y +=  datum.y;
+            _sums.XX += datum.x * datum.x;
+            _sums.XY += datum.x * datum.y;
+            _sums.YY += datum.y * datum.y;
+        });
 
-                         return _sums;
-                     }
+        return _sums;
+    }
 
-                     function meanData() {
-                         return {
-                             X: sums.X / N,
-                             Y: sums.Y / N
-                         };
-                     }
+    function meanData() {
+        return {
+            X: sums.X / N,
+            Y: sums.Y / N
+        };
+    }
 };
 module.exports = fit;
