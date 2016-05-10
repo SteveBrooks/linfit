@@ -1,5 +1,6 @@
 Linear Curve Fit with Standard Error 
 ====================================
+A simple least-squares fit function which calculates linear coefficients with their standard errors and correlation coefficient (r<sup>2</sup>).
 
 Given an array of x-y pairs:
 
@@ -13,11 +14,11 @@ var data = [
 ];
 ```
 
-when linfit is calculated
+when linfit is evaluated
 
 ```javascript
 var fit = require('linfit');
-
+. . .
 var result = fit(data);
 
 ```
@@ -36,14 +37,16 @@ result = {
 
 where 
 
-|Value|Description|
+|Result|Description|
 |:---:|:---|
-|A  |is the y-intercept|
-|B  |is the slope|
-|dA |is the standard error of the y-intercept|
-|dB |is the standard error of the slope|
-|rr |is the correlation coefficient|
+|A  |y-intercept|
+|dA |standard error of the y-intercept|
+|B  |slope|
+|dB |standard error of the slope|
+|rr |correlation coefficient|
 
-or  
+and
 
 ### y = (A ± dA)x + (B ± dB)
+
+
