@@ -32,7 +32,7 @@ describe('fit', function() {
         });
 
         it('should have a correlation coefficient rr=1', function() {
-            expect(result.rr).to.be.eql(1);      
+            expect(result.rr).to.be.eql(1);
         });
     });
 
@@ -56,13 +56,13 @@ describe('fit', function() {
             expect(result.B).to.be.eql(0.9899999999999999);
         });
 
-        it('should have infinitesimally small uncertainties', function() {
+        it('should have the expected standard errors', function() {
             expect(result.dA).to.be.eql(0.1425949975747162);
             expect(result.dB).to.be.eql(0.0336099632494537);
         });
 
-        it('should have a correlation coefficent rr=1', function() {
-            expect(result.rr).to.be.above(0.5);
+        it('should have the expected correlation coefficent', function() {
+            expect(result.rr).to.be.eql(0.9967320261437909);
         });
     });
 
@@ -86,7 +86,7 @@ describe('fit', function() {
         });
     });
 
-    describe('Given an invalid data set in which the item at index 0 is not an array', function() {
+    describe('Given an invalid data set in which the item at index 0 is not an object', function() {
         var testSet = [null, undefined, 3.14, 'a', 42, [] ];
         testSet.forEach(function(test){
             var data = [test, {x:0, y:0}];
@@ -128,7 +128,7 @@ describe('fit', function() {
         });
     });
 
-    describe('Given an invalid data set with invalid x data at index 2', function() {
+    describe('Given an invalid data set with invalid y data at index 2', function() {
         var testSet = [null, undefined, 'a', {}, []];
         testSet.forEach(function(test){
             var data = [{x:1, y:1},{x:1, y:1},{x:1, y:test}];
