@@ -36,10 +36,14 @@ result = {
 
 where 
 
- * A is the y-intercept
- * B is the slope
- * dA is the standard error of the y-intercept
- * dB is the standard error of the slope
- * rr is the correlation coefficient
+|Value|Description|
+|:---:|:---|
+|A  |is the y-intercept|
+|B  |is the slope|
+|dA |is the standard error of the y-intercept|
+|dB |is the standard error of the slope|
+|rr |is the correlation coefficient|
 
+or  
 
+### y = (A ± dA)x + (B ± dB)
