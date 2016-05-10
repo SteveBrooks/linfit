@@ -1,7 +1,7 @@
 {
   "name": "linfit",
-  "version": "0.0.1",
-  "description": "Linear Least-Squares Fit with fit parameter uncertainties.",
+  "version": "0.9.0",
+  "description": "Linear Least-Squares Fit with standard errors",
   "main": "index.js",
   "scripts": {
     "test": "./node_modules/.bin/gulp"
@@ -9,7 +9,7 @@
   "author": "steve.c.brooks@gmail.com",
   "repository": { 
     "type" : "git",
-    "url" : "https://github.com/npm/npm.git"
+    "url" : "https://github.com/SteveBrooks/linfit"
   },
   "license": "MIT",
   "devDependencies": {
