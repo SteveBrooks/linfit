@@ -47,6 +47,6 @@ where
 
 and
 
-### y = (A ± dA)x + (B ± dB)
+### y = (A ± dA) + (B ± dB)x
 
 
