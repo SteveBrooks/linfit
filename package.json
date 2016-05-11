@@ -1,6 +1,6 @@
 {
   "name": "linfit",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "description": "Linear Least-Squares Fit with standard errors",
   "main": "index.js",
   "scripts": {
