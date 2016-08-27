@@ -42,7 +42,7 @@ describe('fit', function() {
             {x:1, y:0.9},
             {x:2, y:2.2},
             {x:3, y:3.2},
-            {x:4, y:3.9},
+            {x:4, y:3.9}
         ];
 
         var result;
@@ -68,7 +68,7 @@ describe('fit', function() {
 
     describe('Given an invalid data set with less than two points', function() {
         var data = [{x:1, y:1}];
-        it('should throw', function() {
+        it('should throw for ' + JSON.stringify(data), function() {
             expect(function(){
                 fit(data);
             }).to.throw(/data array contains less than two elements/);
@@ -78,7 +78,7 @@ describe('fit', function() {
     describe('Given an invalid data set that is not an array', function() {
         var testSet = [null, undefined, 3.14, 'a', 42, {} ];
         testSet.forEach(function(data){
-            it('should throw', function() {
+            it('should throw for ' + JSON.stringify(data), function() {
                 expect(function(){
                     fit(data);
                 }).to.throw(/data is not an array/);
@@ -90,7 +90,7 @@ describe('fit', function() {
         var testSet = [null, undefined, 3.14, 'a', 42, [] ];
         testSet.forEach(function(test){
             var data = [test, {x:0, y:0}];
-            it('should throw', function() {
+            it('should throw for ' + JSON.stringify(test), function() {
                 expect(function(){
                     fit(data);
                 }).to.throw(/element at index 0 is not an object/);
@@ -100,7 +100,7 @@ describe('fit', function() {
 
     describe('Given an invalid data set with missing x data at index 1', function() {
         var data = [{x:1, y:1},{y:1},{x:1, y:1}];
-        it('should throw', function() {
+        it('should throw for ' + JSON.stringify(data), function() {
             expect(function(){
                 fit(data);
             }).to.throw(/element at index 1 has no x property/);
@@ -111,7 +111,7 @@ describe('fit', function() {
         var testSet = [null, undefined, 'a', {}, []];
         testSet.forEach(function(test){
             var data = [{x:1, y:1},{x:test, y:1},{x:1, y:1}];
-            it('should throw', function() {
+            it('should throw for ' + JSON.stringify(data), function() {
                 expect(function(){
                     fit(data);
                 }).to.throw(/element at index 1 has non-numeric x property/);
@@ -121,7 +121,7 @@ describe('fit', function() {
 
     describe('Given an invalid data set with missing y data at index 0', function() {
         var data = [{x:1},{x:1, y:1},{x:1, y:1}];
-        it('should throw', function() {
+        it('should throw for ' + JSON.stringify(data), function() {
             expect(function(){
                 fit(data);
             }).to.throw(/element at index 0 has no y property/);
@@ -132,7 +132,7 @@ describe('fit', function() {
         var testSet = [null, undefined, 'a', {}, []];
         testSet.forEach(function(test){
             var data = [{x:1, y:1},{x:1, y:1},{x:1, y:test}];
-            it('should throw', function() {
+            it('should throw for ' + JSON.stringify(test), function() {
                 expect(function(){
                     fit(data);
                 }).to.throw(/element at index 2 has non-numeric y property/);
