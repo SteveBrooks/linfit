@@ -4,7 +4,7 @@
 
 var path = require('path');
 var gulp = require('gulp');
-var jshint = require('gulp-jshint');
+var eslint = require('gulp-eslint');
 var excludeGitignore = require('gulp-exclude-gitignore');
 var mocha = require('gulp-mocha');
 var istanbul = require('gulp-istanbul');
@@ -24,9 +24,9 @@ gulp.task('lint', function () {
     .on('error', gutil.log) 
     .pipe(excludeGitignore())
     .on('error', gutil.log) 
-    .pipe(jshint())
-    .pipe(jshint.reporter('jshint-stylish'))
-    .pipe(jshint.reporter('fail'));
+    .pipe(eslint())
+    .pipe(eslint.format())
+    .pipe(eslint.failAfterError());
 });
 
 gulp.task('pre-test', ['lint'], function () {

@@ -1,15 +1,15 @@
 {
   "name": "linfit",
-  "version": "0.9.1",
+  "version": "1.0.0",
   "description": "Linear Least-Squares Fit with standard errors",
   "main": "index.js",
   "scripts": {
     "test": "./node_modules/.bin/gulp"
   },
   "author": "steve.c.brooks@gmail.com",
-  "repository": { 
-    "type" : "git",
-    "url" : "https://github.com/SteveBrooks/linfit"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SteveBrooks/linfit"
   },
   "license": "MIT",
   "devDependencies": {
@@ -17,15 +17,13 @@
     "mocha": "^2.4.5",
     "gulp": "^3.9.1",
     "gulp-exclude-gitignore": "^1.0.0",
+    "gulp-eslint": "^3.0.1",
     "gulp-if": "^2.0.1",
     "gulp-istanbul": "^0.10.4",
-    "gulp-jshint": "^2.0.0",
     "gulp-mocha": "^2.2.0",
     "gulp-plumber": "^1.1.0",
     "gulp-util": "^3.0.7",
     "jshint": "^2.9.2",
     "jshint-stylish": "^2.2.0"
-  },
-  "dependencies": {
   }
 }
