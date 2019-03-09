@@ -1,5 +1,5 @@
-Linear Curve Fit with Standard Error 
-====================================
+# Linear Curve Fit with Standard Error
+
 A simple least-squares fit function which calculates linear coefficients with their standard errors and correlation coefficient (r<sup>2</sup>).
 
 Given an array of x-y pairs:
